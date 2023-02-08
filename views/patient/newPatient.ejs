@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <title>EMR | Add Patient</title>
+</head>
+
+<body>
+    <div class="signupBox">
+        <p class="greetings">Add Patient</p>
+        <hr>
+        <form class="row" action="/record" method="post">
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Last Name" name="lastName">
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="First Name" name="firstName">
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Middle Name" name="middleName">
+            </div>
+            <div class="col-6">
+                <select class="form-select" name="gender" id="gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Address" name="address">
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" name="contactNumber" value="+63">
+            </div>
+            <div class="col-6">
+                <input type="date" id="birthday" name="birthday">
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Occupation" name="occupation">
+            </div>
+            <div class="mb-3">
+                <label for="type">Type</label>
+                <select class="form-select" name="type" id="type">
+                    <% for(let type of types) { %>
+                        <option value="<%= type %>">
+                            <%= type %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" placeholder="Reeferred By" name="referral">
+            </div>
+
+            <div class="sub-container">
+                <input type="submit" name="registerButton" value="Register" class="button">
+            </div>
+            <div class="sub-container">
+                <p class="misc">
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
